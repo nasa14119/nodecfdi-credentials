@@ -1,6 +1,8 @@
 {
   "extends": "@nodecfdi/tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "types": ["vitest/globals", "@types/node"]
+    "types": ["vitest/globals", "@types/node"],
+    "target": "es2023",
+    "module": "nodenext"
   }
 }
