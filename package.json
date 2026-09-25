@@ -95,7 +95,7 @@
     "vitest-mock-extended": "^2.0.2"
   },
   "dependencies": {
-    "@nodecfdi/base-converter": "^1.0.7",
+    "@nodecfdi/base-converter": "github:nasa14119/nodecfdi-base-converter#main",
     "@vilic/node-forge": "1.3.2-5",
     "ts-mixer": "^6.0.4"
   },
@@ -132,7 +132,7 @@
     "pfx"
   ],
   "engines": {
-    "node": ">=18 || ^16"
+    "node": ">=18 || 24"
   },
   "browserslist": [
     "defaults",
