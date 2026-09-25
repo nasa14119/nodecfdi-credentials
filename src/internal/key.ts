@@ -11,9 +11,7 @@ export default class Key extends Mixin(DataArray) {
   }
 
   public get type(): KeyTypeEnum {
-    if (!this.typeKey) {
-      this.typeKey = new KeyTypeEnum(this.extractString('type'));
-    }
+    this.typeKey ??= new KeyTypeEnum(this.extractString('type'));
 
     return this.typeKey;
   }

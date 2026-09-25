@@ -46,7 +46,7 @@ export default class PemExtractor {
     type = type.replaceAll(/[!$()*+./:<=>?[\\\]^{|}-]/g, String.raw`\$&`);
 
     const pattern = `^-----BEGIN ${type}-----\r?\n([A-Za-z0-9+/=]+\r?\n)+-----END ${type}-----\r?\n?$`;
-    // eslint-disable-next-line security/detect-non-literal-regexp
+     
     const matches = new RegExp(pattern, 'm').exec(this.getContents());
 
     return this.normalizeLineEndings(matches ? matches[0] : '');

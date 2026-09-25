@@ -78,9 +78,7 @@ export default class PrivateKey extends Key {
   }
 
   public publicKey(): PublicKey {
-    if (!this._publicKey) {
-      this._publicKey = new PublicKey(this.publicKeyContents());
-    }
+    this._publicKey ??= new PublicKey(this.publicKeyContents());
 
     return this._publicKey;
   }

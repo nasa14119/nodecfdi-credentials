@@ -175,10 +175,7 @@ export default class Certificate extends DataArray {
   }
 
   public publicKey(): PublicKey {
-    if (!this._publicKey) {
-      // The public key can be created from PUBLIC KEY or CERTIFICATE
-      this._publicKey = new PublicKey(this.pem());
-    }
+    this._publicKey ??= new PublicKey(this.pem());
 
     return this._publicKey;
   }
@@ -193,9 +190,7 @@ export default class Certificate extends DataArray {
 
   public validOn(datetime?: DateTime): boolean {
     let dateTime = datetime;
-    if (!dateTime) {
-      dateTime = DateTime.now();
-    }
+    dateTime ??= DateTime.now();
 
     return (
       dateTime.toMillis() >= this.validFromDateTime().toMillis() &&
